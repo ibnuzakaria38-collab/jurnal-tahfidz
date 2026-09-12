@@ -1,0 +1,63 @@
+/* ============== TOPBAR — tanggal, search, notifikasi (tema terang) ============== */
+.op-topbar-extra{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; row-gap:8px; }
+.op-date-pill{
+  display:flex; align-items:center; gap:6px;
+  background:var(--emerald-50); border:1px solid #d7e9e0;
+  color:var(--emerald-800); font-size:11px; font-weight:700;
+  padding:7px 12px; border-radius:999px; white-space:nowrap;
+}
+@media (max-width: 640px){
+  .op-date-pill{ display:none; }
+  header.topbar .px-4.sm\:px-6{ flex-wrap:wrap; row-gap:8px; }
+}
+.op-date-sep{ opacity:.45; }
+.op-search-wrap{ position:relative; align-items:center; }
+.op-search-icon{ position:absolute; left:11px; top:50%; transform:translateY(-50%); font-size:12px; opacity:.55; pointer-events:none; }
+.op-search-input{
+  background:#f3f6f4; border:1px solid #e2e8e4; border-radius:999px;
+  padding:7px 12px 7px 30px; font-size:12.5px; width:150px; color:var(--ink);
+  box-shadow:none;
+}
+.op-search-input:focus{ width:190px; transition:width .25s ease; background:#fff; }
+.op-icon-btn{
+  width:36px; height:36px; border-radius:10px;
+  background:#f3f6f4; border:1px solid #e2e8e4; color:var(--emerald-800);
+  font-size:15px; display:flex; align-items:center; justify-content:center;
+  position:relative; cursor:pointer; flex-shrink:0;
+}
+.op-icon-btn:hover{ background:var(--emerald-50); }
+.op-notif-wrap{ position:relative; }
+.op-halaqoh-chip{
+  display:inline-block; font-size:10px; font-weight:700; color:var(--emerald-700);
+  background:var(--emerald-50); border:1px solid #d7e9e0; padding:1px 8px;
+  border-radius:999px; margin-top:2px;
+}
+
+/* ============== ABSENSI BULK ============== */
+.op-absensi-row{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  padding:10px 12px; border:1px solid var(--exec-line); border-radius:12px; margin-bottom:8px;
+}
+.op-absensi-name{ font-size:13px; font-weight:700; color:var(--ink); }
+.op-absensi-sub{ font-size:10.5px; color:var(--exec-muted); }
+.op-absensi-options{ display:flex; gap:4px; flex-wrap:wrap; }
+.op-absensi-chip{
+  font-size:11px; font-weight:700; padding:5px 10px; border-radius:999px;
+  border:1px solid var(--exec-line); background:#fff; color:var(--exec-muted); cursor:pointer;
+  transition:all .15s ease;
+}
+.op-absensi-chip.active-hadir{ background:#d1fae5; color:#065f46; border-color:#a7f3d0; }
+.op-absensi-chip.active-sakit{ background:#fef3c7; color:#92400e; border-color:#fde68a; }
+.op-absensi-chip.active-izin{ background:#dbeafe; color:#1e40af; border-color:#bfdbfe; }
+.op-absensi-chip.active-alpha{ background:#fee2e2; color:#991b1b; border-color:#fecaca; }
+
+/* Placeholder list utilities */
+.op-list-item{ display:flex; align-items:center; gap:10px; padding:10px 4px; border-bottom:1px dashed var(--exec-line); font-size:12.5px; }
+.op-list-item:last-child{ border-bottom:none; }
+
+@media (max-width:768px){
+  .op-topbar-extra .op-search-wrap{ display:none; }
+}
+@media (max-width:640px){
+  .op-topbar-extra .op-date-pill{ display:none; }
+}

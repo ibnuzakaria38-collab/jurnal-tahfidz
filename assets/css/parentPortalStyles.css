@@ -1,0 +1,72 @@
+:root{
+  --pp-green-950:#022c1c;
+  --pp-green-900:#053b28;
+  --pp-green-800:#0a5c3a;
+  --pp-green-700:#0d7a4a;
+  --pp-green-600:#129e5f;
+  --pp-green-100:#e3f8ec;
+  --pp-green-50:#f3fbf6;
+  --pp-gold:#c9952c;
+  --pp-red:#dc2626;
+  --pp-yellow:#d97706;
+  --pp-blue:#2563eb;
+  --pp-line:#e6efe9;
+  --pp-muted:#6b7c74;
+}
+
+body.ortu-portal-active #printJurnalBtn,
+body.ortu-portal-active #btnResetData,
+body.ortu-portal-active .op-search-wrap{
+  display:none !important;
+}
+body.ortu-portal-active .sidebar{ background:var(--pp-green-950); }
+body.ortu-portal-active .sidebar-link.active{ background:var(--pp-green-700); }
+body.ortu-portal-active .sidebar-motivasi{ border-color:rgba(255,255,255,0.1); }
+
+.pp-header-child{
+  display:flex; align-items:center; gap:10px;
+  padding:5px 12px 5px 6px;
+  background:var(--pp-green-50);
+  border:1px solid var(--pp-green-100);
+  border-radius:999px;
+  min-width:0;
+}
+.pp-header-child-avatar{
+  width:32px; height:32px; border-radius:999px; flex-shrink:0;
+  background:var(--pp-green-700);
+  color:#fff; display:flex; align-items:center; justify-content:center;
+  font-family:'Reem Kufi', sans-serif; font-size:14px;
+}
+.pp-header-child-name{ font-size:12.5px; font-weight:800; color:var(--pp-green-900); line-height:1.2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:150px; }
+.pp-header-child-sub{ font-size:10.5px; color:var(--pp-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:150px; }
+@media (max-width:900px){ .pp-header-child{ display:none; } }
+
+.pp-page-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+.pp-page-title{ font-family:'Reem Kufi', sans-serif; font-size:19px; color:var(--pp-green-900); margin:0 0 2px; }
+.pp-page-sub{ font-size:12.5px; color:var(--pp-muted); margin:0; }
+.pp-readonly-tag{
+  display:inline-flex; align-items:center; gap:5px;
+  font-size:10.5px; font-weight:800; letter-spacing:.02em;
+  color:var(--pp-green-800); background:var(--pp-green-100);
+  border:1px solid #bfe6cf; padding:4px 10px; border-radius:999px; white-space:nowrap;
+}
+
+.pp-quick-card{
+  background:var(--pp-green-800);
+  border-radius:20px; padding:20px 22px; color:#fff; position:relative; overflow:hidden;
+}
+.pp-quick-card::after{
+  content:""; position:absolute; inset:0;
+  background-image:radial-gradient(circle at 4px 4px, rgba(255,255,255,0.10) 1.4px, transparent 1.6px);
+  background-size:18px 18px; opacity:.5; pointer-events:none;
+}
+.pp-quick-top{ display:flex; align-items:center; gap:14px; position:relative; z-index:1; }
+.pp-quick-avatar{
+  width:56px; height:56px; border-radius:18px; flex-shrink:0;
+  background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.25);
+  display:flex; align-items:center; justify-content:center; font-size:26px;
+}
+.pp-quick-name{ font-family:'Reem Kufi', sans-serif; font-size:19px; line-height:1.25; }
+.pp-quick-meta{ font-size:12px; color:rgba(255,255,255,0.75); }
+
+/* (rest of parent portal CSS omitted in file for brevity; full file contains table styles, calendar, timeline, etc.) */

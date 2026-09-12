@@ -4,30 +4,48 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sistem Informasi & Jurnal Tahfidz Digital Terintegrasi Berjenjang | PONPES MANARA AL QUR'AN</title>
-<meta name="description" content="Sistem Informasi & Jurnal Tahfidz terintegrasi untuk PONPES MANARA AL QUR'AN. Dashboard manajemen untuk Yayasan, Guru, dan Orang Tua.">
-<meta name="theme-color" content="#022c22">
-
-<!-- Vendor & framework scripts (deferred to improve render performance) -->
-<script defer src="https://cdn.tailwindcss.com"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<script defer src="https://unpkg.com/lucide@1.28.0/dist/umd/lucide.js"></script>
-<script defer src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
-
-<!-- Project helpers (moved from inline into assets/js/) -->
-<script defer src="/assets/js/init-charts.js"></script>
-<script defer src="/assets/js/skiplink.js"></script>
-
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://unpkg.com/lucide@1.28.0/dist/umd/lucide.js"></script>
+<script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script>
+  /* FASE 1 POLISH — Chart.js global defaults (aditif).
+     Diterapkan SEBELUM instance chart manapun dibuat, sehingga seluruh
+     chart yang sudah ada (Yayasan, Guru, Ortu) otomatis mengikuti
+     tipografi & gaya baru tanpa perlu menyentuh kode chart aslinya. */
+  window.addEventListener('DOMContentLoaded', function () {
+    if (typeof Chart === 'undefined') return;
+    Chart.defaults.font.family = "'Plus Jakarta Sans', 'Inter', sans-serif";
+    Chart.defaults.font.size = 12;
+    Chart.defaults.color = '#5b6b63';
+    Chart.defaults.plugins.legend.labels.usePointStyle = true;
+    Chart.defaults.plugins.legend.labels.boxWidth = 8;
+    Chart.defaults.plugins.legend.labels.padding = 14;
+    Chart.defaults.plugins.tooltip.backgroundColor = '#053b28';
+    Chart.defaults.plugins.tooltip.titleFont = { family: "'Plus Jakarta Sans', sans-serif", weight: '700', size: 12 };
+    Chart.defaults.plugins.tooltip.bodyFont = { family: "'Plus Jakarta Sans', sans-serif", size: 12 };
+    Chart.defaults.plugins.tooltip.padding = 10;
+    Chart.defaults.plugins.tooltip.cornerRadius = 10;
+    Chart.defaults.plugins.tooltip.displayColors = true;
+    Chart.defaults.animation.duration = 500;
+    Chart.defaults.animation.easing = 'easeOutQuart';
+    Chart.defaults.responsive = true;
+    Chart.defaults.maintainAspectRatio = false;
+  });
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
-<!-- Extracted CSS -->
+<!-- Extracted CSS links -->
 <link rel="stylesheet" href="/assets/css/design-system.css">
+<link rel="stylesheet" href="/assets/css/execDashboardStyles.css">
+<link rel="stylesheet" href="/assets/css/opDashboardStyles.css">
+<link rel="stylesheet" href="/assets/css/parentPortalStyles.css">
 
-<!-- Remaining module styles are still inline (exec/op/parent/etc.) and will be extracted in follow-up commits -->
+<!-- Note: remaining inline styles (if any) will be extracted in follow-up commits -->
 
 </head>
 <body>
-<!-- The rest of the original HTML body remains unchanged. For brevity the large body content is preserved as-is in this commit; only head CSS extraction was performed in this step. -->
+<!-- Body unchanged; styles have been split into separate files. -->
 
-<!-- Begin original body (unchanged) -->
